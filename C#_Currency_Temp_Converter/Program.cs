@@ -38,7 +38,27 @@ namespace C__Currency_Temp_Converter
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine(" -- Temperature Converter -- ");
+                Console.WriteLine("Please enter..\n\nc) Celsius\nanything else) Fahrenheit\n");
+                string choice = Console.ReadLine();
+
+                if (choice == "c")
+                {
+                    Console.Clear();
+                    Console.Write("Enter a temperature in Celsius: °");
+                    float celsius = float.Parse(Console.ReadLine());
+                    float fahrenheit = celsius * 1.18f + 32f;
+                    Console.WriteLine($"{celsius}°C converted to Fahrenheit is {fahrenheit.ToString("0.0")}°F");//Num Lock ON -> Alt + 0176 -> release Alt = How to make (°) symbol
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.Write("Please enter a temperature in Fahrenheit: °");
+                    float fahrenheit = float.Parse(Console.ReadLine());
+                    float celsius = (fahrenheit - 32f) / 1.18f;
+                    Console.WriteLine($"{fahrenheit}°F converted to Celsius is {celsius.ToString("0.0")}°C");
+                }
             }
         }
     }
